@@ -205,7 +205,8 @@ def excerise_6(list, element):
             return i
     return -1
 
-def excersice_7(*txt):
+def excersice_7(*txt): #no es un compilador, por lo tanto no tiene analisis semantico para comprobar si los parentesis estan bien cerrados,
+    #por lo tanto se asume que si hay un parentesis de cierre sin uno de apertura, no esta bien cerrado. Sin importar el orden.
     words = {}
     round_brackets = 0
     square_brackets = 0
@@ -238,13 +239,15 @@ def excersice_7(*txt):
 #print(excersice_7("()[]{}", "([{}])", "(["))
 
 def excersice_8(register:list):
-    for register_i in register:
-        if type(register_i) != tuple and len(register_i) != 2:
-            return False
-        #sort first by age and then by name (name, age)
-        sorted_register = sorted(register, key=lambda x: (x[1], x[0]))
-    return sorted_register
-#print(excersice_8([("Juan", 25), ("Maria", 30), ("Pedro", 20), ("Ana", 25)]))
+        if type(register) != list or len(register) == 0:
+            return None
+        for register_i in register:
+         if type(register_i) != tuple and len(register_i) != 2:
+             return False
+         #sort first by age and then by name (name, age)
+         sorted_register = sorted(register, key=lambda x: (x[1], x[0]))
+        return sorted_register
+#print(excersice_8([("Juan", 25), ("Maria", 30), ("Pedro", 20), ("Ana", 25)])))
 
 def excersice_9():
     import random
@@ -262,7 +265,7 @@ def excersice_9():
             continue
         break
     return password
-print(excersice_9())
+#print(excersice_9())
 
 
 def excersice_10():
