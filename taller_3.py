@@ -44,14 +44,7 @@ def exercise_6():
     print("Array with NaN replaced by 0:\n", data)
     print("Mean of the array:", np.mean(data))
 
-def exercise_7():
-    """Saving and Loading Arrays"""
-    data = np.array([1, 2, 3, 4, 5])
-    np.save('my_array.npy', data)
-    loaded_data = np.load('my_array.npy')
-    print("Array saved and loaded:\n", loaded_data)
-
-def main():
+def menu():
     """Interactive menu"""
     while True:
         print("\n--- Menu ---")
@@ -78,12 +71,10 @@ def main():
             exercise_5()
         elif option == '6':
             exercise_6()
-        elif option == '7':
-            exercise_7()
         elif option == '0':
             break
         else:
             print("Invalid option. Try again.")
 
 if __name__ == "__main__":
-    main()
+    menu()
