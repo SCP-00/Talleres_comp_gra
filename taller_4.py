@@ -1,70 +1,92 @@
 import numpy as np
 
-# 1) Create a One-Dimensional Array
-# a. Create a one-dimensional array with numbers from 1 to 10.
-array_1d = np.arange(1, 11)
-# b. Print the array.
-print("1) One-Dimensional Array:", array_1d)
+def create_one_dimensional_array():
+    array_1 = np.arange(1, 11)
+    print("1) One-Dimensional Array:", array_1)
 
-# 2) Create a Multidimensional Array
-# a. Create a 2D matrix with 3 rows and 3 columns, filled with numbers from 1 to 9.
-matrix_2d = np.arange(1, 10).reshape(3, 3)
-# b. Print the matrix.
-print("\n2) Two-Dimensional Matrix:\n", matrix_2d)
+def create_two_dimensional_matrix():
+    matrix_2d = np.arange(1, 10).reshape(3, 3)
+    print("\n2) Two-Dimensional Matrix:\n", matrix_2d)
 
-# 3) Basic Operations with Arrays
-# a. Create two one-dimensional arrays with numbers from 1 to 5.
-array_1 = np.arange(1, 6)
-array_2 = np.arange(1, 6)
-# b. Sum the two arrays and store the result in a new array.
-sum_array = array_1 + array_2
-# c. Print the result.
-print("\n3) Sum of Two Arrays:", sum_array)
+def sum_two_arrays():
+    array_2 = np.arange(1, 6)
+    sum_array = array_2 + array_2
+    print("\n3) Sum of Two Arrays:", sum_array)
 
-# 4) Mathematical Functions
-# a. Create an array with numbers from 1 to 5.
-array_3 = np.arange(1, 6)
-# b. Calculate the exponential of each element of the array and store the result in a new array.
-exp_array = np.exp(array_3)
-# c. Print the new array.
-print("\n4) Exponential of Array:", exp_array)
+def exponential_of_array():
+    array_2 = np.arange(1, 6)
+    exp_array = np.exp(array_2)
+    print("\n4) Exponential of Array:", exp_array)
 
-# 5) Indexing and Slicing
-# a. Create an array with numbers from 1 to 10.
-array_4 = np.arange(1, 11)
-# b. Select the even elements of the array and store the result in a new array.
-even_array = array_4[array_4 % 2 == 0]
-# c. Print the new array.
-print("\n5) Even Elements of Array:", even_array)
+def even_elements_of_array():
+    array_1 = np.arange(1, 11)
+    even_array = array_1[array_1 % 2 == 0]
+    print("\n5) Even Elements of Array:", even_array)
 
-# 6) Random Data Generation
-# a. Generate an array of 10 random numbers between 0 and 1.
-random_array = np.random.rand(10)
-# b. Print the array.
-print("\n6) Random Array:", random_array)
+def create_random_array():
+    random_array = np.random.rand(10)
+    print("\n6) Random Array:", random_array)
 
-# 7) Aggregation Functions
-# a. Create an array with numbers from 1 to 5.
-array_5 = np.arange(1, 6)
-# b. Calculate the mean of the elements of the array.
-mean_value = np.mean(array_5)
-# c. Print the mean.
-print("\n7) Mean of Array:", mean_value)
+def mean_of_array():
+    array_3 = np.arange(1, 6)
+    mean_value = np.mean(array_3)
+    print("\n7) Mean of Array:", mean_value)
 
-# 8) Creating Arrays with Factory Functions
-# a. Create an array of 5 elements, all initialized with the value 7.
-array_6 = np.full(5, 7)
-# b. Print the array.
-print("\n8) Array with Constant Value:", array_6)
+def array_with_constant_value():
+    array_4 = np.full(5, 7)
+    print("\n8) Array with Constant Value:", array_4)
 
-# 9) Alignment and Broadcasting Operations
-# a. Create two arrays: one with numbers from 1 to 3 and another with numbers from 4 to 6.
-array_7 = np.arange(1, 3+1)
-array_8 = np.arange(4, 6+1)
-# b. Add the two arrays using broadcasting and store the result in a new array.
-sum_broadcast_array = array_7 + array_8
-# c. Print the new array.
-print("\n9) Sum with Broadcasting:", sum_broadcast_array)
+def sum_with_broadcasting():
+    array_5 = np.arange(1, 3+1)
+    array_6 = np.arange(4, 6+1)
+    sum_broadcast_array = array_5 + array_6
+    print("\n9) Sum with Broadcasting:", sum_broadcast_array)
 
-# 10) Transformation and Resizing Functions
-# No code provided for this section.
+def create_two_dimensional_array_2():
+    array_7 = np.arange(1, 7).reshape(2, 3)
+    print("\n10) Two-Dimensional Array:\n", array_7)
+
+def main_menu():
+    while True:
+        print("\nMenu:")
+        print("1) Create One-Dimensional Array")
+        print("2) Create Two-Dimensional Matrix")
+        print("3) Sum of Two Arrays")
+        print("4) Exponential of Array")
+        print("5) Even Elements of Array")
+        print("6) Create Random Array")
+        print("7) Mean of Array")
+        print("8) Array with Constant Value")
+        print("9) Sum with Broadcasting")
+        print("10) Create Two-Dimensional Array")
+        print("0) Exit")
+
+        choice = input("Enter your choice: ")
+
+        if choice == '1':
+            create_one_dimensional_array()
+        elif choice == '2':
+            create_two_dimensional_matrix()
+        elif choice == '3':
+            sum_two_arrays()
+        elif choice == '4':
+            exponential_of_array()
+        elif choice == '5':
+            even_elements_of_array()
+        elif choice == '6':
+            create_random_array()
+        elif choice == '7':
+            mean_of_array()
+        elif choice == '8':
+            array_with_constant_value()
+        elif choice == '9':
+            sum_with_broadcasting()
+        elif choice == '10':
+            create_two_dimensional_array_2()
+        elif choice == '0':
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main_menu()
